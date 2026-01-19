@@ -1,43 +1,71 @@
-# CSCI 1170: Assignment 3
+🚀 Microblogging Web App (Frontend)
 
-## Developer info
+A client-side microblogging web application that allows users to view, search, and create short posts in a responsive feed. Built using vanilla JavaScript and CSS, with a focus on clean UI, accessibility, and maintainable frontend architecture.
 
-* Full name:Pramodh Kumar Vankayala
-* B00/B01 number:B01031812
-* Dal email address:pr901093@dal.ca
+This project demonstrates core frontend engineering fundamentals without relying on frameworks or backend services.
 
-## Description of Assignment
+✨ Features
 
-* For this assignment, I implemented a client‑side micro‑post feed that lets the current user (Rey) view, search, and create short posts using only JavaScript and CSS, without changing the provided HTML or data files. I load all posts from the starter posts.js file, render them as styled “cards” in a responsive grid timeline, and display the current user information from users.js. I added live searching across post content, hashtags, and mentions, and built a composer that shows a live 280‑character counter, validates input, and inserts new posts at the top of the feed.
+Post Feed Timeline
 
-To improve readability and accessibility, I designed a cohesive dark/light colour theme using CSS variables and wired it to a footer toggle button so the site starts in dark mode and can switch modes instantly with updated button text. I used flexbox and CSS grid to align the header, navigation, compose form, and timeline, created card‑style posts with clear grouping of avatar, author, time, text, and actions, and added hover/focus styles to interactive buttons and links. I also ensured the header is sticky while scrolling and made the layout mobile‑first, with a single‑column feed on small screens and automatic expansion to two and three columns at the 720px and 840px breakpoints
+Renders posts dynamically as card-based components
 
-## Setup and test instructions
+Mobile-first, responsive grid layout
 
-* Download the Assignment 3 starter code and ensure the folder is named a3 with the original structure (including index.html, admin/users.js, admin/posts.js, assets/css/styles.css, and js/scripts.js).
+Live Search
 
-* Do not modify index.html or the files in the admin folder; all behaviour is implemented in js/scripts.js and all styling in assets/css/styles.css.
+Filter posts by content, #hashtags, or @mentions
 
-* Open the a3 folder in your code editor to view or edit the JavaScript and CSS files.
+Updates results instantly as the user types
 
-* To run the app, open index.html in a modern web browser (for example, by double‑clicking the file or using “Open With” in your file explorer).
+Post Composer
 
-* Test the features by:
+Create new posts with real-time 280-character counter
 
-* Confirming the current user information shows “Rey Skywalker” and @rey in the header.
+Client-side validation and immediate insertion into the feed
 
-* Scrolling the page to see the sticky header and responsive timeline layout.
+Dark / Light Theme Toggle
 
-* Using the search bar to filter posts by text, #hashtag, or @mention.
+CSS variable–driven theming
 
-* Composing a new post, watching the live character counter, and submitting to see the new post appear at the top.
+Instant theme switching with persistent UI consistency
 
-* Clicking “Enable light mode” / “Enable dark mode” in the footer to switch colour themes.
+Accessible & Usable UI
 
-## References/citations
+Keyboard-friendly interactions
 
-1. MDN Web Docs. (n.d.). Introduction to the DOM. Mozilla. https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model
+Hover and focus states for interactive elements
 
-2. MDN Web Docs. (n.d.). Using media queries. Mozilla. https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries
+Sticky header for improved navigation
 
-3. MDN Web Docs. (n.d.). ARIA: aria-live attribute. Mozilla. https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-live
+🛠 Tech Stack
+
+HTML5 (provided structure, unmodified)
+
+CSS3
+
+Flexbox & Grid
+
+CSS Variables
+
+Responsive breakpoints
+
+JavaScript (ES6+)
+
+DOM manipulation
+
+Event handling
+
+Client-side state updates
+
+📚 What This Project Demonstrates
+
+Building a full frontend feature set without frameworks
+
+Structuring JavaScript for readability and scalability
+
+Designing responsive layouts using modern CSS
+
+Implementing UI state changes (search, theming, live counters)
+
+Writing clean, maintainable client-side code
