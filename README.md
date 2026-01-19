@@ -69,3 +69,43 @@ Designing responsive layouts using modern CSS
 Implementing UI state changes (search, theming, live counters)
 
 Writing clean, maintainable client-side code
+
+▶️ Running the Project Locally
+
+Clone the repository:
+
+git clone https://github.com/pramodh2006/microblogging-web-app.git
+
+
+Navigate into the project folder:
+
+cd microblogging-web-app
+
+
+Open index.html in any modern web browser.
+
+No build steps or dependencies required.
+
+🧪 Key Interactions to Try
+
+Search posts using keywords, #hashtags, or @mentions
+
+Create a new post and watch the live character counter
+
+Toggle between dark and light modes
+
+Resize the browser window to see responsive behavior
+
+📌 Notes
+
+All functionality implemented independently using JavaScript and CSS
+
+HTML structure and seed data were provided and intentionally left unchanged
+
+📖 References
+
+MDN Web Docs — DOM Manipulation
+
+MDN Web Docs — CSS Media Queries
+
+MDN Web Docs — ARIA Accessibility Guidelines
