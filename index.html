@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jedi · Micro-Posts</title>
+
+    <!-- Link to main stylesheet: styles.css -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <!-- Accessibility feature:
+        "Skip link" lets keyboard and screen reader users jump past repeated nav/header.
+        MDN: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#skip_links
+
+        Hide this using CSS.
+    -->
+    <a class="skip-link" href="#pg-main-content">Skip to content</a>
+
+    <!-- App header: sticky behaviour (implement using CSS) -->
+    <header class="app-header" id="pg-banner" role="banner">
+        <div class="brand">
+            <h1 class="app-title">Jedi Micro-Posts</h1>
+            <p class="tagline">Connecting the Galaxy!</p>
+        </div>
+
+        <!-- Current user panel; populate via JS from admin/users.js -->
+        <div class="current-user" id="current-user">
+            <!-- Accessibility: always provide alt on images.
+            MDN: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#alt -->
+            <img class="avatar" src="assets/img/generic-user.jpg" alt="User profile image">
+            <div class="user-meta">
+                <span class="name" id="cu-fullname">Loading...</span>
+                <span class="handle" id="cu-handle">@loading</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Primary navigation with search -->
+    <nav class="app-nav" id="primary-nav" aria-label="Primary">
+        <!-- Simple search control students will wire up in JS -->
+        <form class="search-form" id="search-form" role="search">
+            <!-- Accessibility: visible label associated by for/id.
+            MDN: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label -->
+            <label for="search-input">Search posts</label>
+            <!-- MDN: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/search -->
+            <input type="search" id="search-input" name="q" placeholder="Search by text, #hashtag, or @mention"
+                autocomplete="off" inputmode="search">
+            <button id="search-submit" type="submit" aria-label="Search" class="btn primary">Search</button>
+        </form>
+    </nav>
+
+    <!-- Main content landmark -->
+    <main id="pg-main-content">
+        <!-- Compose form: students will keep new posts client-side -->
+        <section id="composer" class="composer" aria-labelledby="compose-heading">
+            <h2 id="compose-heading">Share something with the galaxy!</h2>
+
+            <!-- Accessibility: proper labelling, helper text, and character guidance.
+                Remember, you can hide the labels using CSS and keep the element accessible.
+                This is not a requirement, but you may want to explore this as a learning opportunity.
+                MDN (form basics): https://developer.mozilla.org/en-US/docs/Learn/Forms
+                MDN (textarea): https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea -->
+            <form id="compose-form" class="compose-form">
+                <div class="field">
+                    <label for="compose-text">What's happening?</label>
+                    <textarea id="compose-text" name="content" rows="3" maxlength="280"
+                        aria-describedby="compose-help compose-count"
+                        placeholder="Write something short and friendly..." required></textarea>
+                    <p id="compose-help" class="help">
+                        Up to 280 characters. Mentions like <code>@luke</code> and hashtags like <code>#CSS</code> are
+                        allowed.
+                    </p>
+                </div>
+
+                <div class="actions">
+                    <!-- Character count - should automatically update -->
+                    <p class="count">(Remaining: <span id="compose-count">280</span>/280)</p>
+                    <!-- Primary action -->
+                    <button id="post-submit" type="submit" class="btn primary">Post</button>
+                </div>
+            </form>
+
+            <!-- Live region for form status messages set by JS -->
+            <!-- Accessibility: aria-live for non-blocking announcements.
+            MDN: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-live -->
+            <div id="compose-status" class="status" role="status"></div>
+        </section>
+
+        <!-- Timeline list students will populate with createElement -->
+        <section class="timeline-section" aria-labelledby="timeline-heading">
+            <h2 id="timeline-heading">Micro-Post Timeline</h2>
+
+            <!-- Use list semantics for a timeline feed. -->
+            <ul id="timeline" class="timeline" aria-busy="false">
+
+                <!-- Use JS to render <li> elements with the post content here. Suggested structure per item:
+                <li class="post">
+                    <article class="post-card">
+                        <header class="post-header">
+                            <img class="avatar" src="assets/img/generic-user.jpg" alt="User profile image">
+                            <div class="author">
+                                <span class="name">Rey Skywalker</span> 
+                                <span class="handle"><a href="#">@rey</a></span>
+                            </div>
+                            <time class="time" datetime="2025-11-09T11:45:00Z">11:45</time>
+                        </header>
+                        <div class="post-content">
+                            <p>Post text... with #tags and @mentions.</p>
+                        </div>
+                        <footer class="post-actions" aria-label="Post actions">
+                            <button class="btn secondary" type="button" aria-label="Reply">Reply</button>
+                            <button class="btn secondary" type="button" aria-label="Repost">Repost</button>
+                            <button class="btn secondary" type="button" aria-label="Like">Like</button>
+                        </footer>
+                    </article>
+
+                </li>
+
+                MDN (article): https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article
+                MDN (time): https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time
+            -->
+            </ul>
+
+            <!-- Status area for timeline loading/filter messages -->
+            <div id="timeline-status" class="status" role="status"></div>
+        </section>
+    </main>
+
+    <footer class="app-footer" role="contentinfo">
+        <p>&copy; 2025. Jedi Micro-Posts.</p>
+        <button type="button" id="display-mode-toggler">Enable light mode</button>
+    </footer>
+
+    <!-- Data files provided with the assignment starter code -->
+    <script src="admin/users.js" defer></script>
+    <script src="admin/posts.js" defer></script>
+
+    <!-- Write your code in the JS file linked here -->
+    <script src="js/scripts.js" defer></script>
+</body>
+
+</html>
