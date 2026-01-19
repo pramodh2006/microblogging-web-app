@@ -4,6 +4,9 @@ A client-side microblogging web application that allows users to view, search, a
 
 This project demonstrates core frontend engineering fundamentals without relying on frameworks or backend services.
 
+<img width="1881" height="879" alt="image" src="https://github.com/user-attachments/assets/d6e5a0d8-cb70-4203-b069-cc8281a3a0e3" />
+
+
 ✨ Features
 
 Post Feed Timeline
